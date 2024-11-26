@@ -1,15 +1,6 @@
-let inputYards = prompt(
-  "Please enter the number of yards you would like to convert to meters.",
-  "1760"
-);
-
 function convertToMeters(yards) {
   return yards * 0.9144;
 }
-
-let convertedMeters = convertToMeters(inputYards);
-
-console.log(convertedMeters);
 
 function createMessage(yards, meters) {
   let message;
@@ -27,3 +18,33 @@ function createMessage(yards, meters) {
 
   return `You converted ${numYards} yards into ${meters} meters.  ${message}`;
 }
+
+function createRandomNumber(limit) {
+  return Math.floor(Math.random() * limit);
+}
+
+let inputYards = prompt(
+  "Please enter the number of yards you would like to convert to meters.",
+  "1760"
+);
+let convertedMeters = convertToMeters(inputYards);
+let output = createMessage(inputYards, convertedMeters);
+console.log(output);
+
+inputYards = prompt(
+  "Lets try that again.  Enter another number to convert yards to meters.",
+  "26"
+);
+convertedMeters = createMessage(inputYards, convertedMeters);
+output = createMessage(inputYards, convertedMeters);
+console.log(output);
+
+let randomYards = createRandomNumber(100);
+convertedMeters = convertToMeters(randomYards);
+output = createMessage(randomYards, convertedMeters);
+console.log(output);
+
+randomYards = createRandomNumber(10000);
+convertedMeters = convertToMeters(randomYards);
+output = createMessage(randomYards, convertedMeters);
+console.log(output);
